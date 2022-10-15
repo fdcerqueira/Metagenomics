@@ -3,13 +3,13 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 ##metasqueeze project directory and sorted bams directory
-project=/EVBfrancisco/final_final/Binning/final
+project=$(cat /var/tmp/project.$PPID)
 
 ##read the output directory chosen during the assembly.sh script
-START_DIR=/EVBfrancisco/final_final
+START_DIR=$(cat /var/tmp/outputDir.$PPID)
 
 ##project name
-project_name=final
+project_name=$(cat /var/tmp/project_name.$PPID)
 instrain=$START_DIR/instrain
 
 #helper scripts
@@ -73,7 +73,7 @@ while [ ! -z "$1" ]
 shift
 done
 #lack of input errors
-if [ -z "$threads" ] || [ -z "$ani" ] #|| [ -z "$r_ani" ] || [ -z "$min_cov" ] || [ -z "$min_scaf" ]
+if [ -z "$threads" ] || [ -z "$ani" ] || [ -z "$r_ani" ] || [ -z "$min_cov" ] || [ -z "$min_scaf" ]
 then
  show_help
  exit 1
@@ -202,18 +202,7 @@ fi
 conda create -y -n prokka-env
 conda activate prokka-env
 conda install -c conda-forge -c bioconda -c defaults prokka
-###remove conflict of biopython with inStrain
 
-
-##samtools conflict (shared library libncurses5 not present)
-#sudo apt-get install libncurses5
-
-###install prokka via brew
-#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-#brew install brewsci/bio/prokka
-##remove minced dependency, it usually gives errors
-#brew remove minced
-#if there is an error with R in conda, try to change the version installed (more recent)
 echo "conda env ${input} created, and the required packages as well"
 fi
 
@@ -304,15 +293,10 @@ checkm qa $checkm/*.ms ${checkm} \
 -o 1
 
 ##python file
-##python file
 echo ""
 echo "changing checkM output file structure for dREP"
-#if [ "$an" = "true" ]
-#  then
-    python $format ${checkm_final}/bins.csv > ${checkm_final}/checkm_out.csv
-#  else
-#    python $format2 ${checkm_final}/bins.csv > ${checkm_final}/checkm_out.csv
-#fi
+
+python $format ${checkm_final}/bins.csv > ${checkm_final}/checkm_out.csv
 
 eval "$(conda shell.bash hook)"
 conda activate instrain
@@ -364,7 +348,7 @@ for i in $dereplicated/dereplicated_genomes/maxbin*.fa
       filename1=${filename%%.contigs.fa}
       filename2=`echo ${filename1} | grep -o -E "[0-9]+"`
       seqkit replace -p ".+" -r "${filename2}_{nr}" $i > $dereplicated/${filename1}.rename.fa
-        #seqkit rmdup -n $dereplicated/${filename1}.renam.fa -D $dereplicated/duplicates.fa -o $dereplicated/${filename1}.rename.fa
+      #seqkit rmdup -n $dereplicated/${filename1}.renam.fa -D $dereplicated/duplicates.fa -o $dereplicated/${filename1}.rename.fa
 done
 
 if [ $? -ne 0 ]
@@ -584,26 +568,10 @@ done
 eval "$(conda shell.bash hook)"
 conda activate instrain
 
-##removing new annotations for resident and invader ecoli with the Instrain advised parameters for prodigal
-#if [ -f "$prokka/4_residentBacterialGenome.rename.gbk" ] || [ -f "$prokka/1_invaderBacterialGenome.rename.gbk" ]
-#  then
-#    rm $prokka/4_residentBacterialGenome.rename.gbk
-#    rm $prokka/1_invaderBacterialGenome.rename.gbk
-#fi
 
 echo "merging .gbk file of all bins"
 cat $prokka/*.gbk > $merged_genomes_set/all_genomes.gbk
 echo ""
-#echo "Appending Resident and Invader E.coli gbk"
-#if [ -s "$dereplicated/dereplicated_genomes/4_residentBacterialGenome.rename.fa" ]
-#  then
-#    cat $SCRIPT_DIR/ResidentGenomic.gbk >> $merged_genomes_set/all_genomes.gbk
-#fi
-
-#if [ -s "$dereplicated/dereplicated_genomes/4_residentBacterialGenome.rename.fa" ]
-#  then
-#    cat $SCRIPT_DIR/NC_000913.2.gbk >> $merged_genomes_set/all_genomes.gbk
-#fi
 
 echo "Merging .ffn files of all bins"
 cat $prokka/*.ffn > $merged_genomes_set/all_genomes_p.ffn
@@ -623,26 +591,6 @@ seqkit common -s $merged_genomes_set/all_genomes_p.ffn $merged_genomes_set/all_g
 ##get the number of equal CDS sequences in both Files
 sed -n 4p $merged_genomes_set/nr_seqs.txt | grep -o -E "[0-9]+" > $merged_genomes_set/nrr_seqs.txt
 
- p1=$(awk "FNR == 2 {print $1} " $merged_genomes_set/nrr_seqs.txt)
- p2=$(awk "FNR == 4 {print $1} " $merged_genomes_set/nrr_seqs.txt)
-
-if [ "$p1" == "$p2" ]
-  then
-    seq_comp=$p1
-  else
-    seq_comp="not_equal"
-fi
-
-###python script to change the instrain mutations files: to add genes names, product, strand (+/-), and taxonomy
-if [ "$p1" != "$prok" ] || [ "$p1" != "$seq_comp" ] || [ "$p2" != "$seq_comp" ]
-  then
-    echo "CDS sequences from prodigal and prokka are not the same."
-
-    echo "the number of cds from prodigal: $prodi"
-    echo "the number of CDS from prokka: $prok"
-    echo "the number of equal CDSs are $p2 from a total of $p1"
-
-fi
 
 ###change gbk file from prokka, in order to just contain the common CDS with prodigal(instrain)
 echo " Step 1: Genes and gene products"
@@ -692,9 +640,10 @@ for i in $final_tables_SNPs/*.csv
 done
 
 
-echo ""
-echo "instrain script ran successfully"
-echo "exiting"
-exit 0
-#run diamond on the uniref90 database to add more information(protein-protein alignment)
-#diamond blastp -d ${SCRIPT_DIR}/uniref90.dmnd -q $merged_genomes_set/common.fasta -o $merged_genomes_set/matches_diamond.tsv ${mode}
+if [ $? -eq 0 ]
+then
+    echo ""
+    echo "instrain script ran successfully"
+    exit 0
+fi
+

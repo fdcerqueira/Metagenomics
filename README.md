@@ -6,16 +6,21 @@ The aim of the workflow is to process the metagenomics data and detect SNVs in m
 
 The workflow was divided in three main bash scripts, that allow user's input to change certain parameters in the Assembly and inStrain.
 
-Assembly.sh:
+(**Assembly.sh**)
 
 1)Pre-processing of fastq files
+
 2)Remove host contamination
+
 3)Run nonPareil
+
 4)Co-assembly with Megahit
+
 5)Quast
+
 6)Read recruitment
 
-long_reads.sh
+(**long_reads.sh**)
 
 <div id="header" align="center">
   <img src="https://media.giphy.com/media/1sgetPM00wWqJpVUTl/giphy.gif" width="500"/>
@@ -24,12 +29,12 @@ long_reads.sh
 1)pre-process of nanopore reads
 2) Assembly
 
-binning.sh
+(**binning.sh**)
 
 1) Create metadata for the SqueezeMeta pipeline
 2) Binning using SqueezeMeta 
 
-instrain.sh
+(**instrain.sh**)
 
 1)Run checkM
 
@@ -46,13 +51,18 @@ instrain.sh
 7)inStrain profile
 
 8)Gene annotations with prokka
+
 9)Check CDS in common from prokka and prodigal
-10)Extract fom prokka's .gbk file the common CDS and information.
-11)Merge SNVs table with gene and gene product names.
+
+10)Extract fom prokka's .gbk file the common CDS and information
+
+11)Merge SNVs table with gene and gene product names
+
 12)Merge taxonomic information from the MAGs with the SNVs table
 
 
-Third party softwares used:
+
+(**Third party softwares used:**)
 
 megahit:
 https://academic.oup.com/bioinformatics/article/31/10/1674/177884?login=true

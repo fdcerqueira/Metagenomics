@@ -73,32 +73,5 @@ name_table<-gsub(".tsv","", basename(table1))
 
 write.csv(new, paste0(name_table,".csv"), sep=",", col.names = T, row.names = F)
 
-#gene2=gene
 
-#vectors to become the new columns in the SNPs table
-#start_T=Sys.time()
-#gene=c()
-#product=c()
-##dim(table)[1]
-#for (i in 1:1000){
-#  #if((i/dim(table)[1])*100%%10==0){print(paste(i," out of ",dim(table)[1],"done! (",i/dim(table)[1])*100,"%)",sep=""))}
-#  
-#  s=as.character(table$scaffold[i])
-#  p=table$position[i]
-#  
-#  x=which(snp$scaffold == s & p>=snp$Start & p<=snp$End)
-#  
-#  if(length(x)!=1){gene=c(gene, NA)}
-#    else{gene=c(gene, as.character(snp$gene_name[x]))}
-#  if(length(x)!=1){product=c(product,NA)}
-#    else{product=c(product,as.character(snp$Product[x]))}
-#  
-#}
-#end_T=Sys.time()
-#print(end_T-start_T)
-
-##new table
-#new<-cbind(table, gene, product)
-
-#write table
 

@@ -7,6 +7,11 @@ The aim of the workflow is to process the metagenomics data and detect SNVs in m
 The workflow was divided in three main bash scripts, that allow user's input to change certain parameters in the Assembly and inStrain pipeline.
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 **Assembly.sh**
 
 1)Pre-processing of fastq files

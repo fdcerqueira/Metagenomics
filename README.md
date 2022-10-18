@@ -4,7 +4,7 @@ Metagenomics workflow made as a part of an experiment designed to study the temp
 
 The aim of the workflow is to process the metagenomics data and detect SNVs in metagenomic assembled genomes (MAGs).
 
-The workflow was divided in three main bash scripts, that allow user's input to change certain parameters in the Assembly and inStrain.
+The workflow was divided in three main bash scripts, that allow user's input to change certain parameters in the Assembly and inStrain pipeline.
 
 **Assembly.sh**
 
@@ -31,9 +31,9 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 
 **binning.sh**
 
-1) Create metadata for the SqueezeMeta pipeline
+1)Create metadata for the SqueezeMeta pipeline
 
-2) Binning using SqueezeMeta 
+2)Binning using SqueezeMeta 
 
 **instrain.sh**
 

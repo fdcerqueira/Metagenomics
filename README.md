@@ -21,7 +21,8 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 6)Read recruitment
 
 **long_reads.sh**
-![](https://github.com/fdcerqueira/Metagenomics/blob/main/ezgif.com-gif-maker(1).gif)
+
+![](https://github.com/fdcerqueira/Metagenomics/blob/main/ezgif.com-gif-maker(1).gif=250x250)
 
 
 1)pre-process of nanopore reads

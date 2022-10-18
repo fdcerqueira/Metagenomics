@@ -5,8 +5,8 @@ Metagenomics workflow made as a part of an experiment designed to study the temp
 The aim of the workflow is to process the metagenomics data and detect SNVs in metagenomic assembled genomes (MAGs).
 
 The workflow was divided in three main bash scripts, that allow user's input to change certain parameters in the Assembly and inStrain pipeline.
-
-
+\
+\
 **Assembly.sh**
 
 1)Pre-processing of fastq files
@@ -20,8 +20,8 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 5)Quast
 
 6)Read recruitment
-
-
+\
+\
 **long_reads.sh**
 
 <img src=https://github.com/fdcerqueira/Metagenomics/blob/main/ezgif.com-gif-maker(1).gif width="250" height="150">
@@ -29,15 +29,15 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 1)pre-process of nanopore reads
 
 2)Assembly. Either hybrid assembly, long read assembly with illumina reads polishing, or just long read assembly.
-
-
+\
+\
 **binning.sh**
 
 1)Create metadata for the SqueezeMeta pipeline
 
 2)Binning using SqueezeMeta 
-
-
+\
+\
 **instrain.sh**
 
 1)Run checkM
@@ -64,8 +64,8 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 
 12)Merge taxonomic information from the MAGs with the SNVs table
 
-
-
+\
+\
 **Third party softwares used:**
 
 megahit:

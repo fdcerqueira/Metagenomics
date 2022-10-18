@@ -20,21 +20,22 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 
 6)Read recruitment
 
-(**long_reads.sh**)
-
+**long_reads.sh**
 <div id="header" align="center">
   <img src="https://media.giphy.com/media/1sgetPM00wWqJpVUTl/giphy.gif" width="500"/>
 </div>
 
 1)pre-process of nanopore reads
-2) Assembly
+
+2)  Assembly. Either hybrid assembly, long read assembly with illumina reads polishing, or just long read assembly.
 
 (**binning.sh**)
 
 1) Create metadata for the SqueezeMeta pipeline
+
 2) Binning using SqueezeMeta 
 
-(**instrain.sh**)
+**instrain.sh**
 
 1)Run checkM
 
@@ -62,7 +63,7 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 
 
 
-(**Third party softwares used:**)
+**Third party softwares used:**
 
 megahit:
 https://academic.oup.com/bioinformatics/article/31/10/1674/177884?login=true

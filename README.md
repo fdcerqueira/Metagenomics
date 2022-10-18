@@ -8,10 +8,6 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-
 **Assembly.sh**
 
 1)Pre-processing of fastq files

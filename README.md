@@ -6,6 +6,7 @@ The aim of the workflow is to process the metagenomics data and detect SNVs in m
 
 The workflow was divided in three main bash scripts, that allow user's input to change certain parameters in the Assembly and inStrain pipeline.
 
+
 **Assembly.sh**
 
 1)Pre-processing of fastq files
@@ -20,20 +21,23 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 
 6)Read recruitment
 
+
 **long_reads.sh**
 
-![](https://github.com/fdcerqueira/Metagenomics/blob/main/ezgif.com-gif-maker(1).gif)
+![](https://github.com/fdcerqueira/Metagenomics/blob/main/ezgif.com-gif-maker(1).gif {width=40px height=400px})
 
 
 1)pre-process of nanopore reads
 
 2)Assembly. Either hybrid assembly, long read assembly with illumina reads polishing, or just long read assembly.
 
+
 **binning.sh**
 
 1)Create metadata for the SqueezeMeta pipeline
 
 2)Binning using SqueezeMeta 
+
 
 **instrain.sh**
 

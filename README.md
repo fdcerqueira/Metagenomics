@@ -25,6 +25,7 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 <div id="header" align="center">
   <img src="https://media.giphy.com/media/1sgetPM00wWqJpVUTl/giphy.gif" width="500"/>
 </div>
+</div>
 
 1)pre-process of nanopore reads
 

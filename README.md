@@ -27,9 +27,9 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 
 1)pre-process of nanopore reads
 
-2)  Assembly. Either hybrid assembly, long read assembly with illumina reads polishing, or just long read assembly.
+2)Assembly. Either hybrid assembly, long read assembly with illumina reads polishing, or just long read assembly.
 
-(**binning.sh**)
+**binning.sh**
 
 1) Create metadata for the SqueezeMeta pipeline
 

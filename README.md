@@ -21,8 +21,8 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 6)Read recruitment
 
 **long_reads.sh**
+<div style="margin-right: 30px;">
 <div id="header" align="center">
-  <div style="margin-right: 30px;">
   <img src="https://media.giphy.com/media/1sgetPM00wWqJpVUTl/giphy.gif" width="500"/>
 </div>
 

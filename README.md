@@ -17,9 +17,8 @@ Assembly.sh:
 
 long_reads.sh
 
-
 <div id="header" align="center">
-  <img src="https://media.giphy.com/media/1sgetPM00wWqJpVUTl/giphy.gif" width="400"/>
+  <img src="https://media.giphy.com/media/1sgetPM00wWqJpVUTl/giphy.gif" width="500"/>
 </div>
 
 1)pre-process of nanopore reads
@@ -33,12 +32,19 @@ binning.sh
 instrain.sh
 
 1)Run checkM
+
 2)Changing checkM output file structure for dREP
+
 3)Dereplication with dRep
+
 4)Change contigs IDs with seqkit
+
 5)ORFs prediction with prodigal
+
 6)Align reads to MAGs with bowtie2
+
 7)inStrain profile
+
 8)Gene annotations with prokka
 9)Check CDS in common from prokka and prodigal
 10)Extract fom prokka's .gbk file the common CDS and information.

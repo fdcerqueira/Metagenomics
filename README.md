@@ -1,6 +1,6 @@
 # Metagenomics
 
-Metagenomics workflow made as a part of an experiment designed to study the tempo and mode of adaptation of a new strain of E. coli to the gut of obese mice, leptin deficient mice were colonized with a strain of E. coli. In addition to the invader strain, the mice were also colonized with another E. coli strain which typically resides in their normal gut microbiota.
+Metagenomics workflow made as a part of an experiment designed to study the tempo and mode of adaptation of a new strain of *E. coli*, and other species present in the gut of obese mice. Those mice were leptin deficient mice and were colonized with a strain of *E. coli*. In addition to the invader strain, the mice were also colonized with another *E. coli* strain which typically resides in their normal gut microbiota.
 
 The aim of the workflow is to process the metagenomics data and detect SNVs in metagenomic assembled genomes (MAGs).
 

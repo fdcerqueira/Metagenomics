@@ -21,8 +21,9 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 5)Quast
 
 6)Read recruitment
-\
-\
+<br/>
+<br/>
+<br/>
 **long_reads.sh**
 
 <img src=https://github.com/fdcerqueira/Metagenomics/blob/main/ezgif.com-gif-maker(1).gif width="250" height="150">
@@ -30,15 +31,17 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 1)pre-process of nanopore reads
 
 2)Assembly. Either hybrid assembly, long read assembly with illumina reads polishing, or just long read assembly.
-\
-\
+<br/>
+<br/>
+<br/>
 **binning.sh**
 
 1)Create metadata for the SqueezeMeta pipeline
 
 2)Binning using SqueezeMeta 
-\
-\
+<br/>
+<br/>
+<br/>
 **instrain.sh**
 
 1)Run checkM
@@ -64,9 +67,9 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 11)Merge SNVs table with gene and gene product names
 
 12)Merge taxonomic information from the MAGs with the SNVs table
-
-\
-\
+<br/>
+<br/>
+<br/>
 **Third party softwares used:**
 
 megahit:

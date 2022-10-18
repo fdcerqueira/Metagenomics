@@ -24,8 +24,7 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 
 **long_reads.sh**
 
-![](https://github.com/fdcerqueira/Metagenomics/blob/main/ezgif.com-gif-maker(1).gif)
-<img src=https://github.com/fdcerqueira/Metagenomics/blob/main/ezgif.com-gif-maker(1).gif width="150" height="280">
+<img src=https://github.com/fdcerqueira/Metagenomics/blob/main/ezgif.com-gif-maker(1).gif width="250" height="150">
 
 1)pre-process of nanopore reads
 

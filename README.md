@@ -22,9 +22,9 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 
 **long_reads.sh**
 <div id="header" align="center">
-  <img src="https://media.giphy.com/media/1sgetPM00wWqJpVUTl/giphy.gif" width="500"/>
+  <body style="margin:0;">
+  <img src="https://media.giphy.com/media/1sgetPM00wWqJpVUTl/giphy.gif" width="400" height="300"/>
 </div>
-
 
 1)pre-process of nanopore reads
 

@@ -74,7 +74,9 @@ The workflow was divided in three main bash scripts, that allow user's input to 
 
 megahit:
 https://academic.oup.com/bioinformatics/article/31/10/1674/177884?login=true
-NonPareil
+
+NonPareil:
+https://academic.oup.com/bioinformatics/article/30/5/629/246142?login=false
 
 bbmap:
 https://jgi.doe.gov/data-and-tools/software-tools/bbtools/

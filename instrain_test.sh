@@ -184,7 +184,7 @@ conda create -y -n bowtie2
 conda activate bowtie2
 conda install -y -c bioconda bowtie2
 
-#manual change this conda shit
+#manual change this
 conda create -y -n checkm python=3.9
 conda activate checkm
 conda install -y numpy matplotlib pysam

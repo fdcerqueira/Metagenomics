@@ -5,7 +5,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 ###function with the parameters
 function show_help() {
 
-    echo "The script it will activate conda and run quality control (fastp)\n"
+    echo "The script it will activate conda and run quality control (fastp)"
     echo "remove host contamination (bbduk.sh), diversity coverage estimations(NonPareil)"
     echo "assembly (MEGAHIT),assembly quality control (metaquast)"
     echo "and read recruitment to the assembly (bbwrap.sh)"

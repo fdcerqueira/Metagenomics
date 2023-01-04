@@ -141,7 +141,7 @@ mkdir $intermediate_function
 mkdir $final_final
 
 echo ""
-echo "Do you have inStrain, bowtie2,samtools, prokka, seqkit, fastANI and openssl=1.0 installed in a conda env? (y/n)?"
+echo "Do you have inStrain, bowtie2,prodigal,prokka, seqkit, fastANI,checkM installed in a conda env? (y/n)?"
 read CONT
 echo ""
 if [ "$CONT" = "y" ]

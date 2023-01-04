@@ -168,7 +168,7 @@ conda create -y --name $input python=3.9
 #search for conda to be able to activate it and allow to install the required programs
 conda activate $input
 #talvez pelo git
-pip install instrain
+pip install instrain==1.5.4
 conda install -y -c bioconda drep
 conda install -y -c bioconda samtools=1.9 --force-reinstall
 pip uninstall biopython

@@ -80,13 +80,13 @@ echo ""
 echo "Creating new conda environment named SqueezeMeta"
 
         eval "$(conda shell.bash hook)"
-        mamba create -y -n SqueezeMeta4 -c conda-forge -c bioconda -c fpusan squeezemeta=1.6
-        mamba install -y -n SqueezeMeta4 -c bioconda comparem
+        mamba create -y -n SqueezeMeta -c conda-forge -c bioconda -c fpusan squeezemeta=1.6
+        mamba install -y -n SqueezeMeta -c bioconda comparem
 	echo "conda env SqueezeMeta created, and the required packages as well"
 fi
 ###activate the conda environment and select the environment you have
 eval "$(conda shell.bash hook)"
-conda activate SqueezeMeta7
+conda activate SqueezeMeta
 echo "Conda environment ${conda} activated"
 
 #activate perl from squeezemeta conda environment and not from the system  to avoid conflict between perl and cpan versions

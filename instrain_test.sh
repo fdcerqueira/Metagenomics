@@ -354,7 +354,7 @@ echo "changing checkM output file structure for dREP"
 eval "$(conda shell.bash hook)"
 conda activate instrain
 
-dereplicate bins for large amount of genomes
+#dereplicate bins for large amount of genomes
 if [ "$an" = "true" ]
   then
     echo "dereplicating bins with greedy algorithms"
